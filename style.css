@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.game-header h1 {
+    font-size: 2.5em;
+    color: #00ff88;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #aaa;
+    font-style: italic;
+}
+
+.game-area {
+    background: rgba(20, 20, 20, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #333;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #00ff88;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    background: #0a0a0a;
+    display: block;
+}
+
+#ui {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00ff88;
+    backdrop-filter: blur(5px);
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ui-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.ui-label {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.ui-value {
+    color: #fff;
+    font-weight: bold;
+    min-width: 40px;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    text-align: center;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.screen h2 {
+    font-size: 3em;
+    color: #00ff88;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+    margin-bottom: 20px;
+}
+
+.instructions {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.instructions h3 {
+    color: #00ff88;
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    list-style: none;
+    text-align: left;
+}
+
+.instructions li {
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(50, 50, 50, 0.5);
+    border-radius: 5px;
+    border-left: 3px solid #00ff88;
+}
+
+kbd {
+    background: #333;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid #666;
+    font-family: monospace;
+    color: #00ff88;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00ff88, #00cc6a);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.4);
+}
+
+.final-stats {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    font-size: 1.2em;
+}
+
+.final-stats p {
+    margin: 10px 0;
+    color: #00ff88;
+}
+
+.controls {
+    background: rgba(30, 30, 30, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+}
+
+.controls h3 {
+    color: #00ff88;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mobile-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dpad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.dpad > div {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:active {
+    background: #00ff88;
+    color: #000;
+}
+
+.shoot-btn {
+    width: 120px;
+    height: 120px;
+    font-size: 28px;
+    background: linear-gradient(45deg, #ff4444, #cc0000);
+    color: #fff;
+    border: none;
+}
+
+.controls-info {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+.game-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.game-footer a {
+    color: #00ff88;
+    text-decoration: none;
+}
+
+.game-footer a:hover {
+    text-decoration: underline;
+}
+
+#version {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-header h1 {
+        font-size: 2em;
+    }
+    
+    #gameContainer {
+        height: 500px;
+    }
+    
+    .ui-item {
+        font-size: 16px;
+    }
+    
+    .screen h2 {
+        font-size: 2em;
+    }
+    
+    .btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    
+    .mobile-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #gameContainer {
+        height: 400px;
+    }
+    
+    #ui {
+        padding: 10px;
+        gap: 10px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .ui-item {
+        font-size: 14px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .shoot-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 24px;
+    }
+}
